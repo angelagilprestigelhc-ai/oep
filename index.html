@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OEP sin Estrés: Guía Interactiva para Agentes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Warm Neutrals -->
+    <!-- Application Structure Plan: La aplicación transforma la guía lineal en una SPA temática con una navegación superior fija (Inicio, Planificación, Herramientas y Automatización, Optimización, Bienestar). Esta estructura agrupa conceptos relacionados, haciendo la navegación más intuitiva y permitiendo a los usuarios acceder directamente a los temas de interés en lugar de desplazarse por pasos secuenciales. El flujo de usuario es flexible: ya sea un desplazamiento lineal o una navegación directa. Este diseño se eligió para reducir la carga cognitiva y presentar la información como un sistema integral de estrategias en lugar de una lista rígida y desconectada de pasos, mejorando la usabilidad para los agentes de seguros ocupados. -->
+    <!-- Visualization & Content Choices: 
+        - Agenda de Muestra: Objetivo -> Informar. Método -> Tabla HTML estilizada. Interacción -> Ninguna. Justificación -> La forma más clara de mostrar un horario. Biblioteca -> HTML/Tailwind.
+        - Aplicaciones de Productividad: Objetivo -> Organizar. Método -> Rejilla de tarjetas. Interacción -> Efectos hover. Justificación -> Más escaneable y visualmente atractivo que una lista. Biblioteca -> HTML/Tailwind.
+        - Ejemplo de Flujo de Trabajo: Objetivo -> Mostrar Proceso. Método -> Diagrama de flujo HTML/CSS. Interacción -> Hover para resaltar pasos. Justificación -> Visualiza el proceso mejor que el texto. Biblioteca -> HTML/Tailwind.
+        - Métricas y Consejos: Objetivo -> Informar. Método -> Listas estilizadas con iconos. Interacción -> Ninguna. Justificación -> Formato limpio y digerible para listas de elementos. Biblioteca -> HTML/Tailwind. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8;
+            color: #3D352E;
+        }
+        .nav-link.active {
+            color: #4A90E2;
+            font-weight: 600;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #EAEAEA;
+            border-radius: 0.75rem;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .flow-step {
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .flow-step:hover {
+            background-color: #EBF5FF;
+            border-color: #4A90E2;
+        }
+        .flow-arrow {
+            color: #9CA3AF;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="header" class="bg-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 shadow-sm">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-gray-800">Guía OEP</h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Inicio</a>
+                <a href="#planificacion" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Planificación</a>
+                <a href="#herramientas" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Herramientas</a>
+                <a href="#optimizacion" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Optimización</a>
+                <a href="#bienestar" class="nav-link text-gray-600 hover:text-blue-500 transition-colors">Bienestar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="pt-24 pb-16 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Inicio del OEP 2025</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    La Open Enrollment Period no tiene por qué ser abrumadora. Con una estrategia clara, las herramientas adecuadas y un enfoque en la eficiencia, puedes transformar este período intenso en una oportunidad de crecimiento y éxito. Esta guía interactiva te mostrará cómo.
+                </p>
+            </div>
+        </section>
+
+        <section id="planificacion" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    
+                    <h3 class="text-3xl font-bold mt-2">🗓️ Planificación: La Clave del Éxito</h3>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Una agenda bien diseñada es tu principal defensa contra el caos. En lugar de reaccionar a lo que surge, toma el control de tu tiempo con el método "Time Blocking". Esta sección te muestra cómo estructurar tu semana para maximizar la productividad y reducir el estrés.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                    <div class="text-gray-700">
+                        <h4 class="font-bold text-xl mb-3">Beneficios de una Agenda Estructurada</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">✓</span><span>Aprovechas mejor cada hora de tu día.</span></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">✓</span><span>Reduces la posibilidad de errores o clientes olvidados.</span></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">✓</span><span>Creas un equilibrio saludable entre trabajo y descanso.</span></li>
+                            <li class="flex items-start"><span class="text-blue-500 mr-3 mt-1">✓</span><span>Proyectas una imagen más profesional y confiable.</span></li>
+                        </ul>
+                    </div>
+                    <div class="card p-6 shadow-lg">
+                        <h4 class="font-bold text-xl mb-4 text-center">Ejemplo de Agenda "Time Blocking"</h4>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-left">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="p-3 font-semibold">Hora</th>
+                                        <th class="p-3 font-semibold">Actividad</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-200">
+                                    <tr><td class="p-3">8:00 – 9:00</td><td class="p-3">Revisión de correos y mensajes</td></tr>
+                                    <tr class="bg-blue-50"><td class="p-3">9:00 – 12:00</td><td class="p-3">Citas de inscripción (nuevos)</td></tr>
+                                    <tr><td class="p-3">12:00 – 1:00</td><td class="p-3">Pausa para almuerzo</td></tr>
+                                    <tr class="bg-green-50"><td class="p-3">1:00 – 4:00</td><td class="p-3">Renovaciones y seguimiento</td></tr>
+                                    <tr><td class="p-3">4:00 – 5:00</td><td class="p-3">Llamadas de confirmación</td></tr>
+                                    <tr class="bg-yellow-50"><td class="p-3">5:00 – 6:00</td><td class="p-3">Documentación y CRM</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="herramientas" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    
+                    <h3 class="text-3xl font-bold mt-2">🛠️ Herramientas y Automatización</h3>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">La tecnología es tu mejor aliada para escalar tu servicio sin sacrificar tu tiempo. Esta sección explora las aplicaciones de productividad esenciales y cómo puedes automatizar tareas repetitivas como recordatorios y seguimientos, creando flujos de trabajo eficientes.</p>
+                </div>
+                
+                <h4 class="text-2xl font-bold text-center mb-8">Apps de Productividad Recomendadas</h4>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <div class="card p-6"><h5 class="font-bold text-lg mb-2">🗓️ Agendas y Citas</h5><p>Google Calendar, Outlook, Calendly, Acuity Scheduling.</p></div>
+                    <div class="card p-6"><h5 class="font-bold text-lg mb-2">📋 Gestión de Tareas</h5><p>Trello, Asana, Notion.</p></div>
+                    <div class="card p-6"><h5 class="font-bold text-lg mb-2">💬 Comunicación</h5><p>WhatsApp Business, Zoom, Google Meet.</p></div>
+                    <div class="card p-6"><h5 class="font-bold text-lg mb-2">✍️ Firmas Digitales</h5><p>DocuSign, PandaDoc.</p></div>
+                    
+                    <div class="card p-6 flex items-center justify-center bg-gray-50"><p class="text-center font-semibold text-gray-700">💡 Elige 3 o 4 que se adapten a tu estilo.</p></div>
+                </div>
+
+                <div class="mt-20">
+                    <h4 class="text-2xl font-bold text-center mb-8">Ejemplo de un Flujo de Trabajo Automatizado</h4>
+                     <div class="relative max-w-4xl mx-auto">
+                        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:space-x-4">
+                            <div class="flow-step text-center border p-4 rounded-lg w-full md:w-1/5"><p>1. Cliente pide info</p></div>
+                            <div class="flow-arrow text-2xl transform rotate-90 md:rotate-0">→</div>
+                            <div class="flow-step text-center border p-4 rounded-lg w-full md:w-1/5"><p>2. Recibe email con Calendly</p></div>
+                            <div class="flow-arrow text-2xl transform rotate-90 md:rotate-0">→</div>
+                            <div class="flow-step text-center border p-4 rounded-lg w-full md:w-1/5"><p>3. Recibe recordatorio 24h antes</p></div>
+                            <div class="flow-arrow text-2xl transform rotate-90 md:rotate-0">→</div>
+                            <div class="flow-step text-center border p-4 rounded-lg w-full md:w-1/5"><p>4. Email de seguimiento</p></div>
+                            <div class="flow-arrow text-2xl transform rotate-90 md:rotate-0">→</div>
+                            <div class="flow-step text-center border p-4 rounded-lg w-full md:w-1/5"><p>5. Email de encuesta</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="optimizacion" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     
+                    <h3 class="text-3xl font-bold mt-2">📊 Optimización: Delegar y Medir</h3>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Para un crecimiento sostenible, debes enfocarte en las tareas que generan más valor. Aprende a delegar actividades administrativas y a monitorear métricas clave. Estos datos te permitirán ajustar tu estrategia en tiempo real para ser aún más eficiente.</p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <div class="card p-8">
+                        <h4 class="text-xl font-bold mb-4">Tareas a Delegar o Subcontratar</h4>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                           <li>Gestión y filtrado de correos electrónicos.</li>
+                           <li>Actualización de datos y notas en el CRM.</li>
+                           <li>Programación de publicaciones en redes sociales.</li>
+                           <li>Soporte técnico básico para clientes.</li>
+                        </ul>
+                    </div>
+                     <div class="card p-8">
+                        <h4 class="text-xl font-bold mb-4">Indicadores Clave a Monitorear</h4>
+                        <ul class="space-y-3 list-disc list-inside text-gray-700">
+                           <li>Número de citas atendidas por semana.</li>
+                           <li>Tasa de asistencia (confirmadas vs. ausencias).</li>
+                           <li>Tiempo promedio invertido por tipo de cita.</li>
+                           <li>Proporción de nuevas inscripciones vs. renovaciones.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bienestar" class="py-20 bg-blue-50">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h3 class="text-3xl font-bold mt-2">🧠 Bienestar: Tu Activo más Importante</h3>
+                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Un agente estresado o agotado no puede ofrecer un servicio de calidad. Cuidar tu bienestar mental y físico no es un lujo, es una parte fundamental de tu estrategia de productividad. Aquí tienes consejos prácticos para mantener la calma y la energía durante el OEP.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                    <div class="card p-6 text-center">
+                        <p class="text-4xl mb-3">😴</p>
+                        <h5 class="font-bold">Duerme lo Suficiente</h5>
+                        <p class="text-sm text-gray-600">Apunta a dormir al menos 7 horas. El descanso es crucial para la toma de decisiones.</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <p class="text-4xl mb-3">🏃‍♂️</p>
+                        <h5 class="font-bold">Toma Pausas Activas</h5>
+                        <p class="text-sm text-gray-600">Levántate y estira por 5 minutos cada 2 horas para recargar energía.</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <p class="text-4xl mb-3">🍏</p>
+                        <h5 class="font-bold">Come Saludable</h5>
+                        <p class="text-sm text-gray-600">Ten a mano snacks saludables para mantener tus niveles de energía estables.</p>
+                    </div>
+                    <div class="card p-6 text-center">
+                        <p class="text-4xl mb-3">🧘‍♀️</p>
+                        <h5 class="font-bold">Respira y Céntrate</h5>
+                        <p class="text-sm text-gray-600">Usa técnicas de respiración profunda entre citas para reducir el estrés al instante.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Guía Interactiva OEP. Creada para agentes de seguros eficientes.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const header = document.getElementById('header');
+            const headerHeight = header.offsetHeight;
+
+            const observerOptions = {
+                root: null,
+                rootMargin: `-${headerHeight}px 0px 0px 0px`,
+                threshold: 0.4
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                sectionObserver.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
+
